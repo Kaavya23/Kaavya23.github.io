@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kaavya Suppiah — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+</head>
+<body>
+
+  <!-- Custom cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-trail" id="cursorTrail"></div>
+
+  <!-- Feather click canvas -->
+  <canvas id="featherCanvas"></canvas>
+
+  <!-- Noise overlay -->
+  <div class="noise-overlay"></div>
+
+  <!-- ─── NAV ─── -->
+  <nav class="nav" id="nav">
+    <div class="nav-logo">
+      <span class="logo-k">K</span><span class="logo-dot">.</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#about" class="nav-link">À propos</a></li>
+      <li><a href="#skills" class="nav-link">Compétences</a></li>
+      <li><a href="#experience" class="nav-link">Expériences</a></li>
+      <li><a href="#education" class="nav-link">Formation</a></li>
+      <li><a href="#projects" class="nav-link">Projets</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ─── HERO ─── -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+      <div class="grid-lines"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-tag reveal-up" style="--delay:0.1s">
+        <span class="tag-dot"></span>
+        Disponible dès le 19 octobre
+      </div>
+      <h1 class="hero-name reveal-up" style="--delay:0.3s">
+        <span class="name-first">Kaavya</span>
+        <span class="name-last">Suppiah</span>
+      </h1>
+      <p class="hero-title reveal-up" style="--delay:0.5s">
+        Développeuse <em>Power Platform</em> &amp; Big Data · IA
+      </p>
+      <p class="hero-subtitle reveal-up" style="--delay:0.65s">
+        5 ans d'études · 3 ans en alternance · Île-de-France
+      </p>
+      <div class="hero-cta reveal-up" style="--delay:0.8s">
+        <a href="#about" class="btn btn-primary">Découvrir</a>
+        <a href="#contact" class="btn btn-ghost">Me contacter</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+    <!-- Floating tech pills -->
+    <div class="tech-pills">
+      <span class="pill pill-1">Power BI</span>
+      <span class="pill pill-2">Python</span>
+      <span class="pill pill-3">RAG · LLM</span>
+      <span class="pill pill-4">React</span>
+      <span class="pill pill-5">Azure</span>
+    </div>
+  </section>
+
+  <!-- ─── ABOUT ─── -->
+  <section class="section about" id="about">
+    <div class="container">
+      <div class="section-label reveal-up">01 — À propos</div>
+      <div class="about-grid">
+        <div class="about-text reveal-left">
+          <h2 class="section-title">Curieuse.<br/><em>Orientée solutions.</em></h2>
+          <p class="about-desc">
+            Passionnée par l'intersection entre l'intelligence artificielle et le développement applicatif, 
+            je combine expertise en <strong>Power Platform</strong>, <strong>Big Data</strong> et <strong>NLP</strong> 
+            pour concevoir des outils qui font vraiment la différence.
+          </p>
+          <p class="about-desc">
+            Trois ans d'alternance au sein de grands groupes (Société Générale, SUEZ, Stellantis) 
+            m'ont forgé un sens aigu des enjeux métiers et de la rigueur industrielle.
+          </p>
+          <div class="about-stats">
+            <div class="stat">
+              <span class="stat-number" data-target="5">0</span>
+              <span class="stat-label">ans d'études</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number" data-target="3">0</span>
+              <span class="stat-label">ans d'alternance</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number" data-target="100">0</span>
+              <span class="stat-label">+ utilisateurs</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number" data-target="4">0</span>
+              <span class="stat-label">entreprises</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-visual reveal-right">
+          <div class="avatar-frame">
+            <div class="avatar-ring"></div>
+            <div class="avatar-inner">
+              <span class="avatar-initials">KS</span>
+            </div>
+            <div class="avatar-orbit">
+              <span class="orbit-icon" style="--i:0">⚡</span>
+              <span class="orbit-icon" style="--i:1">🤖</span>
+              <span class="orbit-icon" style="--i:2">📊</span>
+              <span class="orbit-icon" style="--i:3">☁️</span>
+            </div>
+          </div>
+          <div class="lang-badges">
+            <span class="lang-badge">🇬🇧 Anglais B2</span>
+            <span class="lang-badge">🇪🇸 Español A2</span>
+            <span class="lang-badge">🇫🇷 Français natif</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SKILLS ─── -->
+  <section class="section skills" id="skills">
+    <div class="container">
+      <div class="section-label reveal-up">02 — Compétences</div>
+      <h2 class="section-title centered reveal-up">Stack technique</h2>
+      <div class="skills-grid">
+
+        <div class="skill-card reveal-up" style="--delay:0.1s">
+          <div class="skill-card-icon">🔷</div>
+          <h3>Power Platform</h3>
+          <div class="skill-tags">
+            <span>Power BI</span><span>Power Apps</span><span>Power Automate</span>
+            <span>Power Query</span><span>Power Pivot</span><span>DAX</span><span>M</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal-up" style="--delay:0.2s">
+          <div class="skill-card-icon">🗃️</div>
+          <h3>Bases de données</h3>
+          <div class="skill-tags">
+            <span>Oracle</span><span>MySQL</span><span>PostgreSQL</span>
+            <span>Dataverse</span><span>SharePoint</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal-up" style="--delay:0.3s">
+          <div class="skill-card-icon">💻</div>
+          <h3>Langages</h3>
+          <div class="skill-tags">
+            <span>Python</span><span>JavaScript</span><span>Java</span>
+            <span>C#</span><span>PHP</span><span>HTML/CSS</span><span>VBA</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal-up" style="--delay:0.4s">
+          <div class="skill-card-icon">⚛️</div>
+          <h3>Frameworks</h3>
+          <div class="skill-tags">
+            <span>React</span><span>NodeJS</span><span>NextJS</span>
+            <span>Laravel</span><span>Flask</span><span>Tailwind CSS</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal-up" style="--delay:0.5s">
+          <div class="skill-card-icon">🤖</div>
+          <h3>IA &amp; NLP</h3>
+          <div class="skill-tags">
+            <span>TensorFlow</span><span>PyTorch</span><span>HuggingFace</span>
+            <span>BERT</span><span>RoBERTa</span><span>SBERT</span>
+            <span>RAG</span><span>LLM</span><span>Gen AI</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal-up" style="--delay:0.6s">
+          <div class="skill-card-icon">☁️</div>
+          <h3>Cloud &amp; DevOps</h3>
+          <div class="skill-tags">
+            <span>GCP</span><span>Azure</span><span>Docker</span>
+            <span>VirtualBox</span><span>GitHub CI/CD</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── EXPERIENCE ─── -->
+  <section class="section experience" id="experience">
+    <div class="container">
+      <div class="section-label reveal-up">03 — Expériences</div>
+      <h2 class="section-title reveal-up">Parcours professionnel</h2>
+      <div class="timeline">
+
+        <div class="timeline-item reveal-left">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">Sept. 2024 → Oct. 2026</div>
+          <div class="timeline-card">
+            <div class="timeline-card-header">
+              <div>
+                <h3>Alternance — Pilote de Processus Opérationnel</h3>
+                <span class="company">Société Générale · Fontenay-sous-Bois</span>
+              </div>
+              <span class="timeline-badge current">En cours</span>
+            </div>
+            <ul>
+              <li>Analyse de données avec Power BI, Power Query, Power Pivot (DAX, M, VBA)</li>
+              <li>Bases de données : Oracle, Dataverse, SharePoint, Excel</li>
+              <li>Gestion de projet et collaboration avec des équipes internationales</li>
+              <li>Amélioration continue des processus et outils</li>
+            </ul>
+            <div class="timeline-techs">
+              <span>Power BI</span><span>DAX</span><span>Oracle</span><span>VBA</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal-right">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">Sept. 2023 → Sept. 2024</div>
+          <div class="timeline-card">
+            <div class="timeline-card-header">
+              <div>
+                <h3>Alternance — Développeuse Power Apps</h3>
+                <span class="company">SUEZ · Courbevoie</span>
+              </div>
+            </div>
+            <ul>
+              <li>Développement d'applications Power Apps utilisées par <strong>+100 utilisateurs</strong></li>
+              <li>Collaboration avec les équipes métiers pour proposer des solutions adaptées</li>
+              <li>Ajout de nouvelles features sur des applications existantes</li>
+              <li>Utilisation de Power Automate, Power BI, Dataverse et SharePoint</li>
+            </ul>
+            <div class="timeline-techs">
+              <span>Power Apps</span><span>Power Automate</span><span>Dataverse</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal-left">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">Janv. → Mars 2023</div>
+          <div class="timeline-card">
+            <div class="timeline-card-header">
+              <div>
+                <h3>Stage Informatique</h3>
+                <span class="company">Stellantis (ex PSA) · La Garenne-Colombes</span>
+              </div>
+            </div>
+            <ul>
+              <li>Gestion d'un parc informatique de 1 200 postes</li>
+              <li>Contrôle d'accès, ticketing helpdesk</li>
+              <li>Organisation des SI aux fonctions diverses de l'entreprise</li>
+            </ul>
+            <div class="timeline-techs"><span>VBA</span><span>Helpdesk</span></div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal-right">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">Mai → Juil. 2022</div>
+          <div class="timeline-card">
+            <div class="timeline-card-header">
+              <div>
+                <h3>Stage Informatique</h3>
+                <span class="company">SAFWEE · Saint-Cloud</span>
+              </div>
+            </div>
+            <ul>
+              <li>Utilisation de l'outil ERP/CRM Odoo</li>
+              <li>Installation d'une baie informatique</li>
+              <li>Visites clientèle pour maintenance informatique</li>
+            </ul>
+            <div class="timeline-techs"><span>Odoo</span><span>ERP/CRM</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── EDUCATION ─── -->
+  <section class="section education" id="education">
+    <div class="container">
+      <div class="section-label reveal-up">04 — Formation</div>
+      <h2 class="section-title reveal-up">Diplômes &amp; Certifications</h2>
+      <div class="edu-grid">
+
+        <div class="edu-card featured reveal-up" style="--delay:0.1s">
+          <div class="edu-year">2024 – 2026</div>
+          <div class="edu-content">
+            <span class="edu-badge">Master</span>
+            <h3>Big Data &amp; Intelligence Artificielle</h3>
+            <span class="edu-school">Sup de Vinci · La Défense</span>
+            <p>Maintenance prédictive ML/DL · Agent intelligent SBERT + RAG · Détection fake news BERT/RoBERTa</p>
+          </div>
+        </div>
+
+        <div class="edu-card reveal-up" style="--delay:0.2s">
+          <div class="edu-year">2023 – 2024</div>
+          <div class="edu-content">
+            <span class="edu-badge">Bachelor 3</span>
+            <h3>Développement Logiciel</h3>
+            <span class="edu-school">Sup de Vinci · La Défense</span>
+            <p>React · NodeJS · GitHub · Projets fullstack</p>
+          </div>
+        </div>
+
+        <div class="edu-card reveal-up" style="--delay:0.3s">
+          <div class="edu-year">2021 – 2023</div>
+          <div class="edu-content">
+            <span class="edu-badge">BTS</span>
+            <h3>SIO — Solutions Logicielles</h3>
+            <span class="edu-school">Lycée Voillaume · Aulnay-sous-Bois</span>
+          </div>
+        </div>
+
+        <div class="edu-card reveal-up" style="--delay:0.4s">
+          <div class="edu-year">2020 – 2021</div>
+          <div class="edu-content">
+            <span class="edu-badge">DUT</span>
+            <h3>Gestion des Entreprises &amp; Administrations</h3>
+            <span class="edu-school">Univ. Sorbonne Paris Nord</span>
+          </div>
+        </div>
+
+        <div class="edu-card reveal-up" style="--delay:0.5s">
+          <div class="edu-year">2019 – 2020</div>
+          <div class="edu-content">
+            <span class="edu-badge">Bac</span>
+            <h3>Baccalauréat Scientifique</h3>
+            <span class="edu-school">Lycée Mozart · Le Blanc-Mesnil</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── PROJECTS ─── -->
+  <section class="section projects" id="projects">
+    <div class="container">
+      <div class="section-label reveal-up">05 — Projets</div>
+      <h2 class="section-title reveal-up">Réalisations notables</h2>
+      <div class="projects-grid">
+
+        <div class="project-card reveal-up" style="--delay:0.1s">
+          <div class="project-glow"></div>
+          <div class="project-header">
+            <span class="project-num">01</span>
+            <div class="project-links">
+              <span class="project-tech-pill">ML · Deep Learning</span>
+            </div>
+          </div>
+          <h3>Maintenance Prédictive Multi-Modèles</h3>
+          <p>Système intelligent combinant régression logistique, Random Forest, Gradient Boosting et MLP. Dashboard Streamlit interactif avec pipeline complet de déploiement local.</p>
+          <div class="project-stack">
+            <span>Python</span><span>Streamlit</span><span>Scikit-learn</span><span>PyTorch</span>
+          </div>
+        </div>
+
+        <div class="project-card reveal-up" style="--delay:0.2s">
+          <div class="project-glow"></div>
+          <div class="project-header">
+            <span class="project-num">02</span>
+            <div class="project-links">
+              <span class="project-tech-pill">NLP · Gen AI</span>
+            </div>
+          </div>
+          <h3>Agent Intelligent d'Évaluation de Compétences</h3>
+          <p>Analyse sémantique SBERT + architecture RAG. Embeddings vectoriels, cosine similarity, interface Streamlit et API GenAI pour recommandations métiers personnalisées.</p>
+          <div class="project-stack">
+            <span>SBERT</span><span>RAG</span><span>Streamlit</span><span>Gen AI</span>
+          </div>
+        </div>
+
+        <div class="project-card reveal-up" style="--delay:0.3s">
+          <div class="project-glow"></div>
+          <div class="project-header">
+            <span class="project-num">03</span>
+            <div class="project-links">
+              <span class="project-tech-pill">NLP · Transformers</span>
+            </div>
+          </div>
+          <h3>Détection de Fake News</h3>
+          <p>Classification de contenus textuels avec modèles Transformers BERT et RoBERTa. Analyse des émotions des utilisateurs via API Bluesky.</p>
+          <div class="project-stack">
+            <span>BERT</span><span>RoBERTa</span><span>Python</span><span>NLP</span>
+          </div>
+        </div>
+
+        <div class="project-card reveal-up" style="--delay:0.4s">
+          <div class="project-glow"></div>
+          <div class="project-header">
+            <span class="project-num">04</span>
+            <div class="project-links">
+              <span class="project-tech-pill">Fullstack</span>
+            </div>
+          </div>
+          <h3>AIRNEIS — Site e-commerce</h3>
+          <p>Site de meubles écossais en équipe. Architecture fullstack avec NodeJS backend et React frontend, collaboration GitHub.</p>
+          <div class="project-stack">
+            <span>React</span><span>NodeJS</span><span>GitHub</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CONTACT ─── -->
+  <section class="section contact" id="contact">
+    <div class="container">
+      <div class="section-label reveal-up">06 — Contact</div>
+      <h2 class="section-title centered reveal-up">
+        Travaillons<br/><em>ensemble</em>
+      </h2>
+      <p class="contact-intro reveal-up">
+        Disponible à partir du 19 octobre · Île-de-France
+      </p>
+      <div class="contact-cards">
+        <a href="mailto:kaavya23@hotmail.com" class="contact-card reveal-up" style="--delay:0.1s">
+          <div class="contact-card-icon">✉️</div>
+          <span class="contact-card-label">Email</span>
+          <span class="contact-card-value">kaavya23@hotmail.com</span>
+        </a>
+        <a href="tel:+33767670210" class="contact-card reveal-up" style="--delay:0.2s">
+          <div class="contact-card-icon">📞</div>
+          <span class="contact-card-label">Téléphone</span>
+          <span class="contact-card-value">07 67 67 02 10</span>
+        </a>
+        <a href="https://www.linkedin.com/in/kaavya-suppiah" target="_blank" class="contact-card reveal-up" style="--delay:0.3s">
+          <div class="contact-card-icon">💼</div>
+          <span class="contact-card-label">LinkedIn</span>
+          <span class="contact-card-value">Kaavya Suppiah</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ─── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <span class="footer-logo">KS</span>
+        <p>© 2025 Kaavya Suppiah — Développeuse Power Platform &amp; IA</p>
+        <p class="footer-sub">Conçu avec ❤️ et beaucoup de café</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/feathers.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

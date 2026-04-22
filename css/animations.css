@@ -1,0 +1,162 @@
+/* ─────────────────────────────────────────────
+   KAAVYA SUPPIAH — PORTFOLIO
+   Animations
+───────────────────────────────────────────── */
+
+/* ── REVEAL ON SCROLL ── */
+.reveal-up,
+.reveal-left,
+.reveal-right {
+  opacity: 0;
+  transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1);
+  transition-delay: var(--delay, 0s);
+}
+.reveal-up    { transform: translateY(48px); }
+.reveal-left  { transform: translateX(-48px); }
+.reveal-right { transform: translateX(48px); }
+
+.reveal-up.visible,
+.reveal-left.visible,
+.reveal-right.visible {
+  opacity: 1;
+  transform: translate(0,0);
+}
+
+/* ── FADE IN UP ── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── SHIMMER BAR ── */
+@keyframes shimmer {
+  0%   { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+
+/* ── STAGGER ITEMS (for skill tags hover) ── */
+.skill-card:hover .skill-tags span {
+  animation: tagPop 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+.skill-card:hover .skill-tags span:nth-child(1) { animation-delay: 0.02s; }
+.skill-card:hover .skill-tags span:nth-child(2) { animation-delay: 0.04s; }
+.skill-card:hover .skill-tags span:nth-child(3) { animation-delay: 0.06s; }
+.skill-card:hover .skill-tags span:nth-child(4) { animation-delay: 0.08s; }
+.skill-card:hover .skill-tags span:nth-child(5) { animation-delay: 0.10s; }
+.skill-card:hover .skill-tags span:nth-child(6) { animation-delay: 0.12s; }
+.skill-card:hover .skill-tags span:nth-child(7) { animation-delay: 0.14s; }
+
+@keyframes tagPop {
+  from { transform: scale(0.85); opacity: 0.5; }
+  to   { transform: scale(1);    opacity: 1;   }
+}
+
+/* ── PAGE LOAD ENTRANCE (hero) ── */
+.hero-content .reveal-up {
+  animation: none; /* handled by JS IntersectionObserver */
+}
+
+/* ── CURSOR HOVER STATE ── */
+body.cursor-on-link .cursor {
+  width: 20px;
+  height: 20px;
+  background: var(--mauve-soft);
+}
+body.cursor-on-link .cursor-trail {
+  width: 50px;
+  height: 50px;
+  opacity: 0.3;
+}
+
+/* ── SECTION ENTRY LINE ── */
+.section-label::before {
+  content: '';
+  display: inline-block;
+  width: 0;
+  height: 1px;
+  background: var(--mauve);
+  vertical-align: middle;
+  margin-right: 0;
+  transition: width 0.6s cubic-bezier(0.16,1,0.3,1), margin-right 0.6s;
+}
+.section-label.visible::before {
+  width: 28px;
+  margin-right: 10px;
+}
+
+/* ── STAT COUNTER ANIMATION ── */
+.stat-number {
+  transition: color 0.5s;
+}
+.stat.counted .stat-number {
+  animation: numberBounce 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+@keyframes numberBounce {
+  from { transform: scale(0.8); }
+  to   { transform: scale(1); }
+}
+
+/* ── TIMELINE PULSE DOT ── */
+.timeline-dot {
+  animation: dotPulse 3s ease-in-out infinite;
+}
+@keyframes dotPulse {
+  0%,100% { box-shadow: 0 0 8px var(--mauve), 0 0 0 0 rgba(177,120,230,0.4); }
+  50%     { box-shadow: 0 0 16px var(--mauve), 0 0 0 10px rgba(177,120,230,0); }
+}
+
+/* ── GRADIENT SWEEP on card hover ── */
+.project-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent 40%, rgba(177,120,230,0.04) 100%);
+  opacity: 0;
+  transition: opacity 0.5s;
+  border-radius: var(--radius-lg);
+  pointer-events: none;
+}
+.project-card:hover::after { opacity: 1; }
+
+/* ── HERO TEXT SHIMMER ── */
+.name-last {
+  background-size: 200% auto;
+  animation: textShimmer 4s linear infinite;
+}
+@keyframes textShimmer {
+  0%   { background-position: 0% center; }
+  50%  { background-position: 100% center; }
+  100% { background-position: 0% center; }
+}
+
+/* ── CONTACT CARD ICON WIGGLE ── */
+.contact-card:hover .contact-card-icon {
+  animation: wiggle 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97);
+}
+@keyframes wiggle {
+  0%,100% { transform: rotate(0); }
+  20%     { transform: rotate(-12deg); }
+  40%     { transform: rotate(10deg); }
+  60%     { transform: rotate(-8deg); }
+  80%     { transform: rotate(6deg); }
+}
+
+/* ── EDU CARD FEATURED SHIMMER BORDER ── */
+.edu-card.featured {
+  position: relative;
+}
+.edu-card.featured::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, var(--mauve), var(--lilac-dark), var(--mauve-soft), var(--mauve));
+  background-size: 300% 300%;
+  animation: borderShimmer 5s ease infinite;
+  z-index: -1;
+  opacity: 0.6;
+}
+@keyframes borderShimmer {
+  0%,100% { background-position: 0% 50%; }
+  50%     { background-position: 100% 50%; }
+}
